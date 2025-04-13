@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Icon } from '../atoms'
+import { Icon } from '../atoms'
 
 interface QuestionOptionProps {
 	/**
@@ -54,21 +54,21 @@ const QuestionOption: React.FC<QuestionOptionProps> = ({
 	optionIndex,
 }) => {
 	// Determinar la variante del botón según el estado
-	const getButtonVariant = () => {
-		if (!showResult) {
-			return isSelected ? 'primary' : 'outline'
-		}
+	// const getButtonVariant = () => {
+	// 	if (!showResult) {
+	// 		return isSelected ? 'primary' : 'outline'
+	// 	}
 
-		if (isCorrect) {
-			return 'primary' // Podría ser un verde personalizado en un sistema real
-		}
+	// 	if (isCorrect) {
+	// 		return 'primary' // Podría ser un verde personalizado en un sistema real
+	// 	}
 
-		if (isSelected && !isCorrect) {
-			return 'secondary' // Podría ser un rojo personalizado en un sistema real
-		}
+	// 	if (isSelected && !isCorrect) {
+	// 		return 'secondary' // Podría ser un rojo personalizado en un sistema real
+	// 	}
 
-		return 'outline'
-	}
+	// 	return 'outline'
+	// }
 
 	// Renderizar el ícono según el estado
 	const renderIcon = () => {

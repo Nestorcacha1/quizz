@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { ResultsTemplate } from '../components/template'
 import { useNavigate } from 'react-router-dom'
-import { QuestionResult } from '../components/template/ResultsTemplate'
+import { ResultsTemplate } from '../components/template'
+import { QuestionResult } from '../types/ResultTemplate'
 
 function ResultsPage() {
 	const navigate = useNavigate()

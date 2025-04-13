@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Button, Text, Icon } from '../components/atoms'
+import { Button, Icon, Text } from '../components/atoms'
 
 // Definir la interfaz para los resultados del quiz
 interface QuizResult {
