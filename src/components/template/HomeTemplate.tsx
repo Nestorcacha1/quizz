@@ -1,50 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Text } from '../atoms'
-// import { QuizForm } from '../organisms'
-import type { UserData } from '../organisms/QuizForm'
-import CategorySelector, { QuizCategory } from '../organisms/CategorySelector'
-
-interface HomeTemplateProps {
-	/**
-	 * Título del quiz
-	 */
-	quizTitle?: string
-
-	/**
-	 * Descripción del quiz
-	 */
-	quizDescription?: string
-
-	/**
-	 * URL de la imagen de portada
-	 */
-	coverImage?: string
-
-	/**
-	 * Función que se ejecuta cuando el usuario inicia el quiz
-	 */
-	onStartQuiz: (userData: UserData, categoryId: string) => void
-
-	/**
-	 * Lista de categorías de preguntas disponibles
-	 */
-	categories?: QuizCategory[]
-
-	/**
-	 * Número de preguntas en el quiz
-	 */
-	questionCount?: number
-
-	/**
-	 * Tiempo estimado en minutos
-	 */
-	estimatedTime?: number
-
-	/**
-	 * Si se debe mostrar la sección de instrucciones
-	 */
-	showInstructions?: boolean
-}
+import { HomeTemplateProps } from '../../types/HomeTemplate'
+import CategorySelector from '../organisms/CategorySelector'
 
 const HomeTemplate: React.FC<HomeTemplateProps> = ({
 	quizTitle = 'Quiz de Conocimientos Generales',

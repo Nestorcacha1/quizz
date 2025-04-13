@@ -1,83 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { ProgressBar, Text, Timer } from '../atoms'
-import { Option } from '../molecules/OptionList'
 import UserCard from '../molecules/UserCard'
 import { QuestionCard, QuizNavigation, QuizSummary } from '../organisms'
-
-// Define una interfaz para las respuestas del usuario
-interface UserAnswer {
-	questionId: string | number
-	selectedOptionId: string | number | null
-	isCorrect: boolean
-}
-
-// Define una interfaz para los resultados del quiz
-interface QuizResult {
-	score: number
-	totalScore: number
-	answers: {
-		id: string | number
-		question: string
-		userAnswer: string | null
-		correctAnswer: string
-		isCorrect: boolean
-		explanation?: string
-		category?: string
-		timeSpent?: number
-	}[]
-	totalTime: number
-}
-
-interface Question {
-	id: string | number
-	questionText: string
-	options: Option[]
-	imageUrl?: string
-	timeLimit?: number
-	explanation?: string // Añadir campo para explicación
-	category?: string // Añadir campo para categoría
-	timeSpent?: number // Este se calculará dinámicamente
-}
-
-interface QuizPageTemplateProps {
-	/**
-	 * Título del quiz
-	 */
-	quizTitle: string
-
-	/**
-	 * Datos del usuario
-	 */
-	userData: {
-		username: string
-		email?: string
-	}
-
-	/**
-	 * Lista de preguntas del quiz
-	 */
-	questions: Question[]
-
-	/**
-	 * Función para manejar cuando termina el quiz
-	 */
-	onQuizComplete?: (results: QuizResult) => void
-
-	/**
-	 * Si debe mostrar el temporizador para todo el quiz
-	 */
-	showQuizTimer?: boolean
-
-	/**
-	 * Tiempo total para completar el quiz en segundos
-	 */
-	quizTimeLimit?: number
-
-	/**
-	 * Si permite navegar hacia atrás entre preguntas
-	 */
-	allowBackNavigation?: boolean
-}
+import {
+	QuizPageTemplateProps,
+	QuizResult,
+	UserAnswer,
+} from '../../types/QuizPageTemplate'
 
 const QuizPageTemplate: React.FC<QuizPageTemplateProps> = ({
 	quizTitle,
